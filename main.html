@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Model View ViewModel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+  <h1>MVVM</h1>
+  <form name="myForm" method="get">
+
+    <fieldset class="checkbox">
+      <label>
+        <input id="applyBindings" type="checkbox" checked> Динамическое связывание
+      </label>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="firstName" class="font-weight-bold">Имя</label>
+      <input id="firstName" type="text" class="form-control" data-bind="firstName">
+      <input id="firstNameCopy" type="text" class="form-control" data-bind="firstName">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="lastName" class="font-weight-bold">Фамилия</label>
+      <input id="lastName" type="text" class="form-control" data-bind="lastName">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="age" class="font-weight-bold">Возраст</label>
+      <input id="age" type="text" class="form-control" data-bind="age">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="city" class="font-weight-bold">Город</label>
+      <input id="city" type="text" class="form-control" data-bind="city">
+    </fieldset>
+
+  </form>
+
+  <div class="jumbotron">
+    <p><span data-bind="city" class="small"></span>.</p>
+    <h1>Привет!</h1>
+    <p>Меня зовут <span data-bind="firstName"></span> <span data-bind="lastName"></span>.</p>
+    <p>Мне <span data-bind="age"></span> лет и я живу в городе <span data-bind="city"></span>.</p>
+  </div>
+
+</div>
+<script src="bundle.js"></script>
+</body>
+</html>
